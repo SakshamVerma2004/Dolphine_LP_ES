@@ -89,17 +89,22 @@ let Body = () => {
     if (!name.trim() || !email.trim() || !phoneNumber.trim()) {
       return;
     }
-    fetch("https://rento-mojo-default-rtdb.firebaseio.com/cart.json", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: name,
-        email: email,
-        phoneNumber: phoneNumber,
-      }),
-    })
+    fetch(
+      "https://dhh-lp-default-rtdb.firebaseio.com/english_speaking/data.json",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          phoneNumber: phoneNumber,
+          date: new Date().toDateString(),
+          time_HH_MM_SS: new Date().toLocaleTimeString(),
+        }),
+      }
+    )
       .then((res) => {
         setShowSuccess(true);
         setFormSubmitted2(true);
@@ -116,17 +121,22 @@ let Body = () => {
     if (!name2.trim() || !email2.trim() || !phoneNumber2.trim()) {
       return;
     }
-    fetch("https://rento-mojo-default-rtdb.firebaseio.com/cart.json", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: name2,
-        email: email2,
-        phoneNumber: phoneNumber2,
-      }),
-    })
+    fetch(
+      "https://dhh-lp-default-rtdb.firebaseio.com/english_speaking/data.json",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name2,
+          email: email2,
+          phoneNumber: phoneNumber2,
+          date: new Date().toDateString(),
+          time_HH_MM_SS: new Date().toLocaleTimeString(),
+        }),
+      }
+    )
       .then((res) => {
         setShowSuccess2(true);
         return res.json();
@@ -142,17 +152,21 @@ let Body = () => {
     if (!name3.trim() || !phoneNumber3.trim()) {
       return;
     }
-    fetch("https://rento-mojo-default-rtdb.firebaseio.com/cart.json", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: name3,
-        email: email3,
-        phoneNumber: phoneNumber3,
-      }),
-    })
+    fetch(
+      "https://dhh-lp-default-rtdb.firebaseio.com/english_speaking/data.json",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name3,
+          phoneNumber: phoneNumber3,
+          date: new Date().toDateString(),
+          time_HH_MM_SS: new Date().toLocaleTimeString(),
+        }),
+      }
+    )
       .then((res) => {
         setShowSuccess3(true);
         setFormSubmitted3(true);
@@ -169,17 +183,21 @@ let Body = () => {
     if (!name4.trim() || !phoneNumber4.trim()) {
       return;
     }
-    fetch("https://rento-mojo-default-rtdb.firebaseio.com/cart.json", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: name4,
-        email: email4,
-        phoneNumber: phoneNumber4,
-      }),
-    })
+    fetch(
+      "https://dhh-lp-default-rtdb.firebaseio.com/english_speaking/data.json",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name4,
+          phoneNumber: phoneNumber4,
+          date: new Date().toDateString(),
+          time_HH_MM_SS: new Date().toLocaleTimeString(),
+        }),
+      }
+    )
       .then((res) => {
         setShowSuccess4(true);
         setFormSubmitted(true);
@@ -395,6 +413,12 @@ let Body = () => {
                 textDecoration: "none",
                 textAlign: "center",
                 cursor: "pointer",
+              }}
+              onClick={() => {
+                setTimeout(() => {
+                  setFormSubmitted3(false);
+                  setShowSuccess3(true);
+                }, 2000);
               }}
             >
               Download Now

@@ -15,7 +15,7 @@ let Footer = () => {
     if (!name.trim() || !email.trim() || !phoneNumber.trim()) {
       return;
     }
-    fetch("https://rento-mojo-default-rtdb.firebaseio.com/cart.json", {
+    fetch("https://dhh-lp-default-rtdb.firebaseio.com/english_speaking/data.json", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,6 +24,8 @@ let Footer = () => {
         name: name,
         email: email,
         phoneNumber: phoneNumber,
+        date: new Date().toDateString(),
+        time_HH_MM_SS: new Date().toLocaleTimeString(),
       }),
     })
       .then((res) => {
